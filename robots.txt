@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://wranglerseatcover.com/sitemap.xml
