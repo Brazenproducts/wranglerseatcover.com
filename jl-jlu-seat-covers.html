@@ -96,6 +96,10 @@ footer a{color:#aaa}
 .color-row{{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin:5px 0}}
 .color-label{{font-size:.8rem;font-weight:700;color:#555;min-width:52px}}
 .color-swatch{{display:inline-block;padding:3px 9px;border-radius:12px;font-size:.75rem;font-weight:600;cursor:default;border:1px solid rgba(0,0,0,.15)}}
+
+.filter-btn{padding:7px 15px;background:#f0f0f0;border-radius:20px;border:2px solid transparent;cursor:pointer;color:#333;font-size:.88rem;font-family:inherit;transition:.15s}
+.filter-btn.active,.filter-btn:hover{background:#1a1a2e;color:#fff;border-color:#1a1a2e}
+.product-card.hidden{display:none}
 </style>
 </head>
 <body>
@@ -115,13 +119,14 @@ footer a{color:#aaa}
 <div class="container">
   <div class="intro">The Jeep Wrangler JL launched in 2018 in two configurations: the 2-door JL and the 4-door JLU. Front seat covers are identical for both. The JL introduced a new interior with more electronics and optional heated seats &mdash; always verify cover compatibility if you have heated, ventilated, or massage seats. The Mojave and 392 Editions require special covers with HVAC cutouts; standard JL covers will not fit these editions.</div>
   <div class="step-nav"><span class="label">Door count:</span>
-  <a href="#all">All JL/JLU</a>
-  <a href="#2door">2-Door JL</a>
-  <a href="#4door">4-Door JLU</a>
+  <button class="filter-btn active" data-filter="doors" data-val="all">All JL/JLU</button>
+  <button class="filter-btn" data-filter="doors" data-val="2door">2-Door JL</button>
+  <button class="filter-btn" data-filter="doors" data-val="4door">4-Door JLU</button>
 </div>
 <div class="step-nav"><span class="label">Year:</span>
-  <a href="#2018-2023">2018&ndash;2023</a>
-  <a href="#2024">2024+</a>
+  <button class="filter-btn active" data-filter="year" data-val="all">All Years</button>
+  <button class="filter-btn" data-filter="year" data-val="2018-2023">2018&ndash;2023</button>
+  <button class="filter-btn" data-filter="year" data-val="2024">2024+</button>
 </div><div class="divider"></div>
   <div class="bartact-card">
   <img src="https://www.bartact.com/cdn/shop/products/bartact-jeep-wrangler-seat-covers-black-red-same-as-insert-color-front-tactical-seat-covers-for-jeep-wrangler-jlu-2018-22-4-door-only-not-for-mojave-or-392-edition-bartact-w-molle-290.jpg?v=1762457338" alt="Bartact Tactical Seat Covers JL/JLU (2018+)" loading="lazy">
@@ -148,7 +153,7 @@ footer a{color:#aaa}
 </div>
   <h2 class="section" id="all">Amazon Picks &mdash; JL/JLU 2018+</h2>
   <p class="picks-intro">All picks below are confirmed for JL/JLU 2018+ fitment and SAB airbag-compatible. None will fit the Mojave or 392 Edition without modification.</p>
-  <div class="product-card">
+  <div class="product-card" data-year="all" data-doors="all">
   <img src="https://m.media-amazon.com/images/I/81n+FBfFWCL._AC_SL400_.jpg" alt="Smittybilt GEN2 Neoprene Seat Covers — Jeep Wrangler JL/JLU 2018+" loading="lazy">
   <div class="info">
     <h3>Smittybilt GEN2 Neoprene Seat Covers — Jeep Wrangler JL/JLU 2018+</h3>
@@ -160,7 +165,7 @@ footer a{color:#aaa}
     <div class="china-badge">&#127464;&#127475; Manufactured in China</div><br>
     <a href="https://www.amazon.com/dp/B0BQHCQK2M?tag=brazenprodu01-20" target="_blank" rel="noopener nofollow" class="amz-btn">View on Amazon</a>
   </div>
-</div><div class="product-card">
+</div><div class="product-card" data-year="all" data-doors="all">
   <img src="https://m.media-amazon.com/images/I/718DBvHIgyL._AC_SL400_.jpg" alt="Aierxuan Diamond Stitch Seat Covers — Jeep Wrangler JL/JLU" loading="lazy">
   <div class="info">
     <h3>Aierxuan Diamond Stitch Seat Covers — Jeep Wrangler JL/JLU</h3>
@@ -172,7 +177,7 @@ footer a{color:#aaa}
     <div class="china-badge">&#127464;&#127475; Manufactured in China</div><br>
     <a href="https://www.amazon.com/dp/B09HZL16VK?tag=brazenprodu01-20" target="_blank" rel="noopener nofollow" class="amz-btn">View on Amazon</a>
   </div>
-</div><div class="product-card">
+</div><div class="product-card" data-year="all" data-doors="all">
   <img src="https://m.media-amazon.com/images/I/71x3s8n3xbL._AC_SL400_.jpg" alt="GIANT PANDA Neoprene Seat Covers — Jeep Wrangler JL/JLU 2018-2024" loading="lazy">
   <div class="info">
     <h3>GIANT PANDA Neoprene Seat Covers — Jeep Wrangler JL/JLU 2018-2024</h3>
@@ -184,7 +189,7 @@ footer a{color:#aaa}
     <div class="china-badge">&#127464;&#127475; Manufactured in China</div><br>
     <a href="https://www.amazon.com/dp/B09F3MHRPD?tag=brazenprodu01-20" target="_blank" rel="noopener nofollow" class="amz-btn">View on Amazon</a>
   </div>
-</div><div class="product-card">
+</div><div class="product-card" data-year="all" data-doors="all">
   <img src="https://m.media-amazon.com/images/I/71bOaP9BSML._AC_SL400_.jpg" alt="FH Group Waterproof Seat Covers — Jeep Wrangler JL" loading="lazy">
   <div class="info">
     <h3>FH Group Waterproof Seat Covers — Jeep Wrangler JL</h3>
@@ -206,5 +211,33 @@ footer a{color:#aaa}
   <a href="https://bullstrap.com/collections/limit-straps" target="_blank" rel="noopener" style="color:#c8601a;font-weight:600;margin:0 .4rem">Limit Straps</a>·
   <a href="https://bullstrap.com/collections/all" target="_blank" rel="noopener" style="color:#c8601a;font-weight:600;margin:0 .4rem">Browse All →</a>
 </div>
+
+<script>
+(function(){
+  var activeYear='all', activeDoors='all';
+  function applyFilters(){
+    document.querySelectorAll('.product-card').forEach(function(card){
+      var y=card.dataset.year, d=card.dataset.doors;
+      var yearOk=(activeYear==='all'||y==='all'||y===activeYear);
+      var doorOk=(activeDoors==='all'||d==='all'||d===activeDoors);
+      card.classList.toggle('hidden',!(yearOk&&doorOk));
+    });
+  }
+  document.querySelectorAll('.filter-btn').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var f=this.dataset.filter, v=this.dataset.val;
+      if(f==='year') activeYear=v;
+      if(f==='doors') activeDoors=v;
+      // Update active state per group
+      document.querySelectorAll('.filter-btn[data-filter="'+f+'"]').forEach(function(b){b.classList.remove('active')});
+      this.classList.add('active');
+      applyFilters();
+      // Scroll to products
+      var sec=document.getElementById('all');
+      if(sec) sec.scrollIntoView({behavior:'smooth',block:'start'});
+    });
+  });
+})();
+</script>
 </body>
 </html>
